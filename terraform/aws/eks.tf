@@ -10,10 +10,17 @@ data aws_iam_policy_document "iam_policy_eks" {
     actions = ["sts:AssumeRole"]
     principals {
       type        = "Service"
+      
+      
+      
       identifiers = ["eks.amazonaws.com"]
     }
   }
 }
+
+
+
+
 
 resource aws_iam_role "iam_for_eks" {
   name               = "${local.resource_prefix.value}-iam-for-eks"
